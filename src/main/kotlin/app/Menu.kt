@@ -30,8 +30,8 @@ class Menu(private val consola: IConsola, private val calculadora: ICalculadora)
                 val resultado = calculadora.realizarCalculo(operador, num1, num2)
                 consola.mostrar("Resultado: $resultado")
 
-            } catch (e: Exception) {
-                consola.mostrarError("Error: ${e.message}")
+            } catch (e: NumberFormatException) {
+                consola.mostrarError("Error: Formato de número incorrecto")
             }
 
         } while (consola.pedirInfo("¿Desea realizar otro cálculo? (s/n)").lowercase() == "s")
