@@ -1,9 +1,9 @@
 package org.example.utils
 
+import java.io.File
+
 interface IUtilsFiles {
-    fun leerArchivo(ruta: String): List<String>
-    fun agregarLinea(ruta: String, linea: String): Boolean
-    fun escribirArchivo(ruta: String, elementos: List<String>): Boolean
-    fun existeFichero(ruta: String): Boolean
-    fun existeDirectorio(ruta: String): Boolean
+    fun crearCarpetaSiNoExiste(path: String): Boolean
+    fun obtenerLogs(path: String): List<File>
+    fun obtenerLogMasReciente(path: String): File?
 }
